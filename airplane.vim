@@ -1,4 +1,7 @@
 "let g:airline_left_sep = '▖'
 "let g:airline_left_sep = ''
 let g:airline_section_y = '%{winnr()}:%{bufnr("%")}'
-AirlineTheme bubblegum
+function! AirlineInit()
+  AirlineTheme bubblegum
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
