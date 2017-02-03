@@ -6,6 +6,7 @@ set ts=2
 set et
 set wmh=0
 set incsearch
+set noequalalways
 hi Search term=standout cterm=bold ctermfg=1 ctermbg=0
 
 let g:terminal_scrollback_buffer_size = 65536
