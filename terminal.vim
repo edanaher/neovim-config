@@ -9,3 +9,5 @@ function! OpenInFileDir()
 endfunction
 
 map <Leader>c :call OpenInFileDir()
+
+map <C-W>b :w<enter>:bdelete<enter>
