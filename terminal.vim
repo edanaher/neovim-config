@@ -10,3 +10,4 @@ endfunction
 
 map <Leader>c :call OpenInFileDir()
 
+tnoremap <M-P> <C-\><C-n>pa
