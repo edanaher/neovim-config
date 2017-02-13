@@ -38,8 +38,9 @@ tnoremap <M-k> <C-\><C-n><C-w>k
 tnoremap <M-h> <C-\><C-n><C-w>h
 tnoremap <M-l> <C-\><C-n><C-w>l
 tnoremap <M-p> <C-\><C-n><C-w>p
-inoremap <M-j> <Esc><C-w>j
-inoremap <M-k> <Esc><C-w>k
+" This are handled in deoplete.vim; inoremap doesn't seem to compose well :(
+"inoremap <M-j> <Esc><C-w>j
+"inoremap <M-k> <Esc><C-w>k
 inoremap <M-h> <Esc><C-w>h
 inoremap <M-l> <Esc><C-w>l
 inoremap <M-p> <Esc><C-w>p
