@@ -55,3 +55,4 @@ endfunction
 call s:load('airline')
 call s:load('deoplete')
 call s:load('terminal')
+call s:load('scala')
