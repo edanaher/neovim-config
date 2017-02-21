@@ -6,9 +6,11 @@ set ts=2
 set et
 set wmh=0
 set incsearch
+set inccommand=nosplit
 set noequalalways
 set t_Co=256
 hi Search term=standout ctermfg=208 ctermbg=238
+hi IncSearch term=standout ctermfg=208 ctermbg=236
 
 let g:terminal_scrollback_buffer_size = 65536
 
