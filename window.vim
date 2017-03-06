@@ -1,8 +1,16 @@
+function! PrevWindowOrCount(count) range
+  if a:count == 0
+    wincmd p
+  else
+    exec a:count "wincmd w"
+  endif
+endfunction
+
 noremap <M-j> <C-w>j
 noremap <M-k> <C-w>k
 noremap <M-h> <C-w>h
 noremap <M-l> <C-w>l
-noremap <M-p> <C-w>p
+noremap <silent><M-p> :<C-U>call PrevWindowOrCount(v:count)<return>
 tnoremap <M-j> <C-\><C-n><C-w>j
 tnoremap <M-k> <C-\><C-n><C-w>k
 tnoremap <M-h> <C-\><C-n><C-w>h
