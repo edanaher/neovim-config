@@ -1,3 +1,4 @@
+cnoremap <M-P> <C-r>"
 inoremap <M-P> <Esc>pa
 tnoremap <M-P> <C-\><C-n>pa
 inoremap <M-*> <Esc>"*pa
