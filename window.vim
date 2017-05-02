@@ -6,8 +6,24 @@ function! PrevWindowOrCount(count) range
   endif
 endfunction
 
-noremap <M-j> <C-w>j
-noremap <M-k> <C-w>k
+function! WincmdWithEmpty(com) range
+  let l:curwin = winnr()
+  exec "wincmd" a:com
+  if l:curwin != winnr() && winheight(l:curwin) == 1
+    exec l:curwin "resize 0"
+  end
+endfunction
+
+function! ResizeWithDefault(def, count, neg) range
+  let l:amount = a:def
+  if a:count != 0
+    let l:amount = a:count
+  end
+  exec "resize " . a:neg . l:amount
+endfunction
+
+noremap <silent><M-j> :call WincmdWithEmpty("j")<return>
+noremap <silent><M-k> :call WincmdWithEmpty("k")<return>
 noremap <M-h> <C-w>h
 noremap <M-l> <C-w>l
 noremap <silent><M-p> :<C-U>call PrevWindowOrCount(v:count)<return>
@@ -23,3 +39,7 @@ inoremap <M-h> <Esc><C-w>h
 inoremap <M-l> <Esc><C-w>l
 inoremap <M-p> <Esc><C-w>p
 
+noremap <silent><M-i> :call ResizeWithDefault(4, v:count, "+")<return>
+noremap <silent><M-o> :call ResizeWithDefault(4, v:count, "-")<return>
+noremap <silent><M-O> :resize -999<return>
+noremap <silent><M-I> :resize +999<return>
