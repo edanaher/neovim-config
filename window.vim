@@ -6,9 +6,9 @@ function! PrevWindowOrCount(count) range
   endif
 endfunction
 
-function! WincmdWithEmpty(com) range
+function! WincmdWithEmpty(com, count) range
   let l:curwin = winnr()
-  exec "wincmd" a:com
+  exec a:count "wincmd" a:com
   if l:curwin != winnr() && winheight(l:curwin) == 1
     exec l:curwin "resize 0"
   end
@@ -22,8 +22,8 @@ function! ResizeWithDefault(def, count, neg) range
   exec "resize " . a:neg . l:amount
 endfunction
 
-noremap <silent><M-j> :call WincmdWithEmpty("j")<return>
-noremap <silent><M-k> :call WincmdWithEmpty("k")<return>
+noremap <silent><M-j> :call WincmdWithEmpty("j", v:count)<return>
+noremap <silent><M-k> :call WincmdWithEmpty("k", v:count)<return>
 noremap <M-h> <C-w>h
 noremap <M-l> <C-w>l
 noremap <silent><M-p> :<C-U>call PrevWindowOrCount(v:count)<return>
