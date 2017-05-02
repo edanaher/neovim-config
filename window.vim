@@ -43,3 +43,11 @@ noremap <silent><M-i> :call ResizeWithDefault(4, v:count, "+")<return>
 noremap <silent><M-o> :call ResizeWithDefault(4, v:count, "-")<return>
 noremap <silent><M-O> :resize -999<return>
 noremap <silent><M-I> :resize +999<return>
+tnoremap <silent><M-i> <C-\><C-n>:resize +4<return>a
+tnoremap <silent><M-o> <C-\><C-n>:resize -4<return>a
+tnoremap <silent><M-O> <C-\><C-n>:resize -999<return>a
+tnoremap <silent><M-I> <C-\><C-n>:resize +999<return>a
+inoremap <silent><M-i> <Esc>:resize +4<return>a
+inoremap <silent><M-o> <Esc>:resize -4<return>a
+inoremap <silent><M-O> <Esc>:resize -999<return>a
+inoremap <silent><M-I> <Esc>:resize +999<return>a
