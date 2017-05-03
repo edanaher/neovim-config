@@ -12,7 +12,7 @@ set t_Co=256
 hi Search term=standout ctermfg=208 ctermbg=238
 hi IncSearch term=standout ctermfg=208 ctermbg=238
 
-let g:terminal_scrollback_buffer_size = 65536
+let g:terminal_scrollback_buffer_size = 4096
 
 let mapleader = "\<Space>"
 
